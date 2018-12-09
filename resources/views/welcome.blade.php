@@ -10,6 +10,10 @@
         <!-- Fonts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+
+
     </head>
     <body>
     <div id="main_menu">
@@ -25,19 +29,29 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.html">Inicio</a>
+                            <a class="navbar-brand" href="index.blade.php">Inicio</a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav navbar-center">
-                                <li><a href="/category">Categorias</a></li>
-                                <li><a href="/discount_cupon">Cupones</a></li>
-                                <li><a href="/payment_method">Metodos</a></li>
-                                <li><a href="/product_order">Ordenes de compra</a></li>
-                                <li><a href="/product">Productos</a></li>
-                                <li><a href="/provider">Provedores</a></li>
+                                <li><a href="/matter">Materias</a></li>
+                                <li><a href="/student">Estudiantes</a></li>
+                                <li><a href="/oportunity">Oportunidad</a></li>
+                                <li><a href="/career">Carrera</a></li>
+                                <li><a href="/teacher">Profesores</a></li>
+                                <li><a href="/groups">Grupos</a></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reportes
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/report_products">Clientes</a></li>
+                                        <li><a href="/report_orders">Ordenes</a></li>
+                                        <li><a href="/report_graphics">Graficos</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="../login.php">Login</a></li>
+                                <li><a href="/logout">Logout</a></li>
                             </ul>
                         </div>
 

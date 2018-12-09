@@ -3,11 +3,39 @@
 namespace App\Http\Controllers;
 use App\PaymentMethod;
 use Illuminate\Http\Request;
-
+use GuzzleHttp\Client;
 class PaymentMethodController extends Controller
 {
     public function index() {
-        $payments = PaymentMethod::all();
+        //$payments = PaymentMethod::all();
+        $client = new Client();
+        $res = $client->get('http://localhost:8080/SIIWS_PATM/api/wsstudent/getStudent/419fe98053b75f0ca1286f54a4615673', ['auth' =>  ['root', 'root']]);
+        //echo $res->getBody();
+        $respo =json_decode($res->getBody(),true);
+        foreach ($respo as $r)
+        {
+            print_r( $r);
+            echo "<br><br><br><br>";
+        }
+        /*
+        $request = new HttpRequest();
+        $request->setUrl('http://localhost:8080/SIIWS_PATM/api/wsstudent/getStudent/9600937bcd795c0f267800f5665f0fe4');
+        $request->setMethod(HTTP_METH_GET);
+
+        $request->setHeaders(array(
+            'postman-token' => '8170dad1-6e07-2f25-479a-b85ab006bfca',
+            'cache-control' => 'no-cache',
+            'authorization' => 'Basic cm9vdDpyb290'
+        ));
+
+        try {
+            $response = $request->send();
+
+            echo $response->getBody();
+        } catch (HttpException $ex) {
+            echo $ex;
+        }*/
+        die();
         return view('payment_method.payment_methods_list',['payments'=>$payments]) ;
     }
     public function store(Request $request)

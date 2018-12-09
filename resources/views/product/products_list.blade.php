@@ -14,7 +14,7 @@
         {!! Form::open(['route' => '/product/search', 'method' => 'post', 'novalidate', 'class' => 'form-inline']) !!}
         <div class="form-group">
             <label for="exampleInputName2">Marca</label>
-            <input type="text" class="form-control" name = "marca" >
+            <input type="text" class="form-control" name = "name" >
         </div>
         <button type="submit" class="btn btn-default">Buscar</button>
         <a href="{{ route('product.index') }}" class="btn btn-ouline-primary">Todos</a>
@@ -24,6 +24,7 @@
         <table class="table table-condensed table-striped table-bordered">
             <thead>
             <tr>
+                <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Marca</th>
                 <th>Modelo</th>
@@ -36,6 +37,7 @@
             <tbody>
             @foreach($products as $product)
                 <tr>
+                    <td><a href="{{ $product->image }}"><img src='{{ $product->image  }} ' width="50" height="50"></a></td>
                     <td>{{ $product->product_name }}</td>
                     <td>{{ $product->brand }}</td>
                     <td>{{ $product->model }}</td>

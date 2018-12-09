@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Cupon;
+use App\DiscountCupon;
 use Illuminate\Http\Request;
 
 class ApiCuponController extends Controller
 {
     public function index()
     {
-        $cupon= Cupon::all();
+        $cupon= DiscountCupon::all();
         json_encode($cupon);
         return $cupon;
     }

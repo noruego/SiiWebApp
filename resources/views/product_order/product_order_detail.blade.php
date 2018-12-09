@@ -17,18 +17,16 @@
                 <br> Descripcion: {{ $product->order_description }}
                 <br> Total: {{ $product->total }}
                 <br></div>
-            @foreach($ship as $ship)
             <div class='panel panel-success'>
                 <div class='panel-heading'>Detalles de envio</div>
-                <div class='panel-body'>Nombre: {{ $ship->name }}
-                    <br> Email: {{ $ship->email }}
+                <div class='panel-body'>Nombre: {{$ship->ship}}
+                    <br> Email: {{$ship->email}}
                     <br> Telefono: {{ $ship->phone }}
                     <br> Direccion: {{ $ship->address }}
                     <br> Ciudad: {{ $ship->city }}
                     <br> Estado: {{ $ship->state }}
                     <br></div>
             </div>
-            @endforeach
             <div class='panel panel-success'>
                 <div class='panel-heading'>Cupon de descuento</div>
                 <div class='panel-body'>Cupon: {{ $product->cupon }}

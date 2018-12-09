@@ -28,7 +28,7 @@
                 {!! Form::label('full_name', 'Estado') !!}
                 <select class="form-control" id="state" name="state" placeholder="Selecciona un estado">
                     @foreach($state as $state)
-                    <option value="{{ $state->id }}">{{ $state->name }}</option>
+                    <option value="{{ $state-id }}">{{ $state->name }}</option>
                     @endforeach
                 </select>
 

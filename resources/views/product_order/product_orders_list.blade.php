@@ -35,12 +35,10 @@
                 <tr>
                     <td>{{ $product_order->customer }}</td>
                     <td>{{ $product_order->order_date }}</td>
-                    <td>{{ $product_order->quantity }}</td>
+                    <td>{{ $product_order->payment_method }}</td>
                     <td>{{ $product_order->total }}</td>
                     <td>
                         <a class="btn btn-outline-primary btn-xs" href="{{ route('/product_order/detail',['id' => $product_order->id_product_order] )}}" >Detalles</a>
-                        <a class="btn btn-outline-primary btn-xs" href="{{ route('product_order.edit',['id' => $product_order->id_product_order] )}}" >Editar</a>
-                        <a class="btn btn-danger btn-xs" href="{{ route('/product_order/delete',['id' => $product_order->id_product_order] )}}" >Eliminar</a>
                     </td>
 
                 </tr>

@@ -8,8 +8,12 @@ use App\Http\Controllers\Controller;
 
 class CuponController extends Controller {
     public function index() {
-        $cupons = Cupon::all();
-        return view('cupons_list',['cupons'=>$cupons]) ;
+        if($_SESSION['loggeado']) {
+            $cupons = Cupon::all();
+            return view('cupons_list', ['cupons' => $cupons]);
+        }
+        else
+            echo 'No tiene permisos';
     }
     public function store(Request $request)
     {
@@ -45,6 +49,14 @@ class CuponController extends Controller {
     public function search(Request $request){
         $cupon = Cupon::where('nombre','like','%'.$request->name.'%')->get();
         return \View::make('cupons_list',['cupons'=>$cupon]);
+
+    }
+    public function logged()
+    {
+        if($_SESSION['loggeado'])
+            return true;
+        else
+            return false;
 
     }
 }

@@ -1,9 +1,9 @@
 @extends('welcome')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+@section('add')
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            {!! Form::model($category,['route' => 'product.store', 'method' => 'post', 'novalidate']) !!}
+            {!! Form::model($category,['route' => 'product.store', 'method' => 'post', 'novalidate','enctype'=>"multipart/form-data"]) !!}
             <div class="form-group">
                 {!! Form::label('full_name', 'Nombre') !!}
                 {!! Form::text('name', null, ['class' => 'form-control' , 'required' => 'required']) !!}
@@ -33,9 +33,15 @@
                 {!! Form::select('provider',$provider, ['class' => 'form-control' , 'required' => 'required']) !!}
             </div>
             <div class="form-group">
+                    imagen del archvo: <input type="file" name="myfile" /><br />
+            </div>
+            <input type="hidden" value="{{ csrf_token() }}" name="_token">
+            <div class="form-group">
                 {!! Form::submit('Guardar', ['class' => 'btn btn-success ' ] ) !!}
             </div>
             {!! Form::close() !!}
+
         </div>
     </div>
 </div>
+    @stop

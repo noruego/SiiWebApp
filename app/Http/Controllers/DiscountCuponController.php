@@ -8,8 +8,10 @@ use App\Http\Controllers\Controller;
 
 class DiscountCuponController extends Controller {
     public function index() {
-        $cupons = Cupon::all();
-        return view('discount_cupon/discount_cupons_list',['cupons'=>$cupons]) ;
+        
+            $cupons = Cupon::all();
+            return view('discount_cupon/discount_cupons_list', ['cupons' => $cupons]);
+    
     }
     public function store(Request $request)
     {
@@ -35,6 +37,8 @@ class DiscountCuponController extends Controller {
     {
         $cupon = Cupon::find($request->id);
         $cupon->Update($request->all());
+        $cupon->percentage=$request->percentage;
+        $cupon->save();
         return redirect('/discount_cupon');
     }
     public function delete($id)

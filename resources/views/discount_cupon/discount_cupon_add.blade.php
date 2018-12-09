@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('email', 'Fecha de inicio') !!}
-                {!! Form::date('start_date', \Carbon\Carbon::now(), ['class' => 'form-control' , 'required' => 'required']) !!}
+                {!! Form::date('start_date', \Carbon\Carbon::now(), ['class' => 'form-control' ,'required' => 'required']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('email', 'Fecha de vencimiento') !!}
@@ -31,4 +31,11 @@
         </div>
     </div>
 </div>
+<script>
+    $('.date').datepicker({
+        format: "yyyy-mm-dd",
+        language: "es",
+        autoclose: true
+    });
+</script>
     @stop
